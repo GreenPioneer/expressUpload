@@ -1,15 +1,14 @@
 'use strict';
 var path = require('path'),
     express = require('express'),
-    _ = require('lodash'),
     fs = require('fs'),
-    path = require('path'),
     bodyParser = require('body-parser'),
-    multipart = require('connect-multiparty'),
-    multipartyMiddleware = multipart(),
-    app = express(),
-    fileFolderPath = './public/files/',
-    uploadDir = path.resolve(__dirname, fileFolderPath);
+    multipartyMiddleware = require('connect-multiparty')(),
+    app = express();
+
+var fileFolderPath = './public/files/';
+var uploadDir = path.resolve(__dirname, fileFolderPath);
+
 //configs
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
